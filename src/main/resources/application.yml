@@ -1,0 +1,24 @@
+micronaut:
+  application:
+    name: desafioPix
+
+
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/pix
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: 1532
+jpa.default.properties.hibernate.hbm2ddl.auto: update
+
+
+
+grpc:
+client:
+  plaintext: true
+    max-retry-attempts: 10
+      channels:
+        chave_pix :
+          address: 'localhost:50051'
+          plaintext: true
+          max-retry-attempts: 5
